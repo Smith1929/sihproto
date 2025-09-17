@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients - HealthConnect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Light background for the main content area */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Top Navigation/Header Bar */
+        .top-nav {
+            background-color: #1E4620; /* UPDATED: Changed from dark blue to dark green */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-nav .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between items like "Apps", "Bookmarks" */
+        }
+
+        .top-nav .nav-item {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.2s;
+        }
+
+        .top-nav .nav-item:hover {
+            color: white;
+        }
+
+        .top-nav .right-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-nav .right-section button {
+            background-color: #28a745; /* Green for "Add All Bookmarks" */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: background-color 0.2s;
+        }
+
+        .top-nav .right-section button:hover {
+            background-color: #218838;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex-grow: 1; /* Allows content to take up available space */
+            padding: 20px 40px; /* Padding on sides matches screenshot */
+            max-width: 1200px; /* Max width to keep content readable */
+            margin: 0 auto; /* Center the content */
+            width: 100%; /* Ensure it takes full width up to max-width */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        /* Page Header (Patients and Add Patient Button) */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 1.8em;
+            font-weight: 500;
+            color: #283e51;
+            margin: 0;
+        }
+
+        .add-patient-btn {
+            background-color: #28a745; /* Green as in screenshot */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .add-patient-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Patient Records Section */
+        .patient-records-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+        }
+
+        .patient-records-section h2 {
+            font-size: 1.5em;
+            font-weight: 500;
+            color: #283e51;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        .patient-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .patient-table thead th {
+            background-color: #e6f7ea; /* Light green background for table header */
+            color: #283e51;
+            text-align: left;
+            padding: 12px 15px;
+            font-size: 0.95em;
+            font-weight: 500;
+            border-bottom: 2px solid #c9e0d1; /* Darker green border */
+        }
+
+        .patient-table tbody td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .patient-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .patient-table tbody tr:hover {
+            background-color: #f9fbf9; /* Subtle hover effect */
+        }
+
+        .patient-table .actions-column {
+            text-align: center; /* Center the view button */
+            width: 100px; /* Fixed width for consistency */
+        }
+
+        .patient-table .view-btn {
+            background-color: #28a745; /* Green for View button */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: background-color 0.2s ease;
+        }
+
+        .patient-table .view-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #e6f7ea; /* Light green footer */
+            color: #283e51;
+            text-align: center;
+            padding: 15px 20px;
+            margin-top: auto; /* Pushes footer to the bottom */
+            font-size: 0.9em;
+            border-top: 1px solid #c9e0d1;
+        }
+
+        /* Basic responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px 20px;
+            }
+
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5em;
+            }
+
+            .add-patient-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .patient-records-section {
+                padding: 15px;
+            }
+
+            .patient-table thead {
+                display: none; /* Hide table header on small screens */
+            }
+
+            .patient-table, .patient-table tbody, .patient-table tr, .patient-table td {
+                display: block; /* Make table elements behave like blocks */
+                width: 100%;
+            }
+
+            .patient-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                background-color: white;
+            }
+
+            .patient-table td {
+                text-align: right;
+                padding-left: 50%; /* Make space for data label */
+                position: relative;
+                border: none;
+            }
+
+            .patient-table td::before {
+                content: attr(data-label); /* Display data label from attribute */
+                position: absolute;
+                left: 15px;
+                width: calc(50% - 30px);
+                text-align: left;
+                font-weight: 500;
+                color: #283e51;
+            }
+
+            .patient-table .actions-column {
+                text-align: right;
+                width: auto;
+                padding-right: 15px;
+            }
+
+            .patient-table .view-btn {
+                width: auto; /* Allow button to size naturally */
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="top-nav">
+        <div class="left-section">
+            <span style="font-size: 1.2em; margin-right: 5px;">&#9776;</span>
+            
+        </div>
+        <div class="right-section">
+            <button>Add All Bookmarks</button>
+            <span style="margin-left: 10px; font-size: 1.2em;">&#9638;</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Patients</h1>
+            <button class="add-patient-btn">Add Patient</button>
+        </div>
+
+        <div class="patient-records-section">
+            <h2>Patient Records</h2>
+            <table class="patient-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                        <th class="actions-column">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="patientTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        @2024 HealthConnect. All rights reserved.
+    </footer>
+
+    <script>
+        // Sample patient data (dynamic content)
+        const patients = [
+            { id: 1, name: "Ravi Kumar", age: 45, gender: "Male", contact: "+91 9876543210" },
+            { id: 2, name: "Anita Desai", age: 30, gender: "Female", contact: "+91 9123456780" },
+            { id: 3, name: "Suresh Patel", age: 52, gender: "Male", contact: "+91 9988776655" },
+            { id: 4, name: "Priya Sharma", age: 28, gender: "Female", contact: "+91 8765432109" },
+            { id: 5, name: "Rajesh Singh", age: 60, gender: "Male", contact: "+91 7654321098" }
+        ];
+
+        // Function to render patient table
+        function renderPatientTable() {
+            const tableBody = document.getElementById('patientTableBody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            patients.forEach(patient => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td data-label="Name">${patient.name}</td>
+                    <td data-label="Age">${patient.age}</td>
+                    <td data-label="Gender">${patient.gender}</td>
+                    <td data-label="Contact">${patient.contact}</td>
+                    <td data-label="Actions" class="actions-column">
+                        <button class="view-btn" onclick="viewPatient(${patient.id})">View</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Dummy function for View button action
+        function viewPatient(patientId) {
+            alert(`Viewing patient with ID: ${patientId}`);
+            // In a real application, you'd navigate to a detail page
+            // or open a modal with patient information.
+        }
+
+        // Render the table when the page loads
+        document.addEventListener('DOMContentLoaded', renderPatientTable);
+    </script>
+</body>
+</html>

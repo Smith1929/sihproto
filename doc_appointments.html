@@ -1,0 +1,81 @@
+<html>
+ <head>
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+   <link
+     rel="stylesheet"
+     as="style"
+     onload="this.rel='stylesheet'"
+     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+   />
+   <title>Appointments</title>
+   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+ </head>
+ <body>
+   <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f8fcf9] group/design-root overflow-x-hidden"
+     style='font-family: Inter, "Noto Sans", sans-serif;'>
+     <div class="layout-container flex h-full grow flex-col">
+
+       <!-- HEADER -->
+       <header class="flex items-center justify-between px-6 py-4 bg-[#0d1b12] text-white">
+         <h1 class="text-xl font-bold">Appointments</h1>
+         <button class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold">New Appointment</button>
+       </header>
+
+       <!-- APPOINTMENTS TABLE -->
+       <main class="flex-1 p-6">
+         <div class="bg-white rounded-xl shadow p-6">
+           <h2 class="text-lg font-bold text-[#0d1b12] mb-4">Upcoming Appointments</h2>
+           <table class="w-full border-collapse">
+             <thead>
+               <tr class="border-b text-[#4c9a66]">
+                 <th class="py-2 px-3">Patient</th>
+                 <th class="py-2 px-3">Doctor</th>
+                 <th class="py-2 px-3">Date</th>
+                 <th class="py-2 px-3">Status</th>
+                 <th class="py-2 px-3">Actions</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Ravi Kumar</td>
+                 <td class="py-2 px-3">Dr. Sharma</td>
+                 <td class="py-2 px-3">2025-09-20</td>
+                 <td class="py-2 px-3 text-[#13ec5b] font-medium">Confirmed</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Reschedule</button>
+                   <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Cancel</button>
+                 </td>
+               </tr>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Anita Desai</td>
+                 <td class="py-2 px-3">Dr. Mehta</td>
+                 <td class="py-2 px-3">2025-09-22</td>
+                 <td class="py-2 px-3 text-[#4c9a66] font-medium">Pending</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Confirm</button>
+                   <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Cancel</button>
+                 </td>
+               </tr>
+               <tr>
+                 <td class="py-2 px-3">Suresh Patel</td>
+                 <td class="py-2 px-3">Dr. Singh</td>
+                 <td class="py-2 px-3">2025-09-25</td>
+                 <td class="py-2 px-3 text-red-500 font-medium">Cancelled</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#13ec5b] text-[#0d1b12] rounded-lg">Rebook</button>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </main>
+
+       <!-- FOOTER -->
+       <footer class="bg-[#0d1b12] text-white text-center py-4">
+         <p>@2024 HealthConnect. All rights reserved.</p>
+       </footer>
+     </div>
+   </div>
+ </body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Telemedicine Nabha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef2f5; /* Lighter background similar to image */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex; /* Use flexbox for layout */
+            min-height: 100vh; /* Ensure full viewport height */
+        }
+
+        /* Sidebar (Matching image's dark sidebar - now very dark green) */
+        .sidebar {
+            width: 250px;
+            background-color: #1a322c; /* Very dark green, close to black */
+            color: #fff;
+            padding: 30px 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar-logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #fff; /* White text for logo */
+            text-align: center;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar-nav-item {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-nav-item a {
+            color: #AAB7B8; /* Lighter grey for inactive links */
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px 15px;
+            display: block;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar-nav-item a:hover {
+            background-color: #2b4f43; /* Slightly lighter dark green for hover */
+            color: #fff;
+        }
+
+        .sidebar-nav-item a.active {
+            background-color: #4CAF50; /* Green accent for active link */
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex-grow: 1; /* Take remaining space */
+            padding: 30px;
+            background-color: #eef2f5; /* Light background similar to image */
+        }
+
+        /* Header (Patient Info) */
+        .header {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-info h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #000; /* Black for titles */
+            margin: 0;
+        }
+
+        .header-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Dashboard Layout */
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Reusable Card Styles */
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #000; /* Black for titles */
+            border-bottom: 1px solid #e0e0e0; /* Lighter border */
+            padding-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* Call and Medicine Section */
+        .actions-card {
+            text-align: center;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .action-btn {
+            border: none;
+            padding: 18px 35px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            min-width: 200px; /* Ensure buttons are wide enough */
+        }
+
+        .action-btn img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .start-call-btn {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .start-call-btn:hover {
+            background-color: #45a049;
+        }
+
+        .end-call-btn {
+            background-color: #f44336; /* Red */
+        }
+
+        .end-call-btn:hover {
+            background-color: #da190b;
+        }
+
+        .buy-medicine-btn {
+            background-color: #2196F3; /* Blue, similar to 'view' button */
+        }
+
+        .buy-medicine-btn:hover {
+            background-color: #1976d2;
+        }
+
+        /* History Section */
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .history-item {
+            background-color: #E8F8F5; /* Light green for list items */
+            padding: 18px 25px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+
+        .history-item:hover {
+            background-color: #D1F2EB; /* Slightly darker on hover */
+        }
+
+        .history-date {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 600;
+            flex-shrink: 0;
+            width: 120px; /* Fixed width for date */
+        }
+
+        .history-details {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0 20px;
+            flex-grow: 1;
+        }
+
+        .view-btn {
+            background-color: #03a9f4; /* Blue */
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            flex-shrink: 0;
+        }
+
+        .view-btn:hover {
+            background-color: #0288d1;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px 15px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .sidebar-nav-item {
+                margin-bottom: 0;
+            }
+            .sidebar-logo {
+                margin-bottom: 20px;
+            }
+            .main-content {
+                padding: 20px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+            .header-info {
+                width: 100%;
+                text-align: center; /* Center text for smaller screens */
+            }
+            .header-info h1 {
+                font-size: 1.8rem;
+            }
+            .header-info p {
+                font-size: 1rem;
+            }
+            .action-buttons {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .action-btn {
+                width: 100%;
+                min-width: unset;
+            }
+            .history-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .history-date {
+                width: auto;
+            }
+            .history-details {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+            .view-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">Tele-Medy</div>
+        <nav class="sidebar-nav">
+            <li class="sidebar-nav-item"><a href="#">Reports</a></li>
+            <li class="sidebar-nav-item"><a href="patient_settings.html">Settings</a></li>
+            <li class="sidebar-nav-item"><a href="patient_dash_punjabi.html">Punjabi</a></li>
+            <a href="login.html">Back</a>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-info">
+                <h1>Patient Dashboard</h1>
+                <p>Mrs. Baljit Kaur, Village Jhind</p>
+            </div>
+        </header>
+
+        <main class="dashboard-container">
+
+            <div class="card actions-card">
+                <h2 class="card-title">Actions</h2>
+                <div class="action-buttons">
+                    <button class="action-btn start-call-btn">
+                        <img src="https://via.placeholder.com/40x40.png?text=📞" alt="Call Icon">
+                        <span>Start Video Call</span>
+                    </button>
+                    <button class="action-btn end-call-btn">
+                        <img src="https://via.placeholder.com/40x40.png?text=🛑" alt="End Call Icon">
+                        <span>End Call</span>
+                    </button>
+                    <button class="action-btn buy-medicine-btn">
+                        <img src="https://via.placeholder.com/40x40.png?text=💊" alt="Medicine Icon">
+                        <span>Buy Medicine</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card history-card">
+                <h2 class="card-title">Medical History</h2>
+                <div class="history-list">
+                    <div class="history-item">
+                        <span class="history-date">10 September, 2025</span>
+                        <p class="history-details">Consultation with Dr. Sharma</p>
+                        <button class="view-btn">View</button>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-date">28 August, 2025</span>
+                        <p class="history-details">Fever Check-up</p>
+                        <button class="view-btn">View</button>
+                    </div>
+                    <div class="history-item">
+                        <span class="history-date">15 July, 2025</span>
+                        <p class="history-details">Prescription for seasonal flu</p>
+                        <button class="view-btn">View</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

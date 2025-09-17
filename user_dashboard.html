@@ -1,0 +1,114 @@
+<html>
+ <head>
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+   <link
+     rel="stylesheet"
+     as="style"
+     onload="this.rel='stylesheet'"
+     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+   />
+   <title>ASHA Dashboard</title>
+   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+ </head>
+ <body>
+   <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f8fcf9] group/design-root overflow-x-hidden"
+     style='font-family: Inter, "Noto Sans", sans-serif;'>
+     <div class="layout-container flex h-full grow flex-col">
+
+       <!-- HEADER -->
+       <header class="flex items-center justify-between px-6 py-4 bg-[#0d1b12] text-white">
+         <h1 class="text-xl font-bold">ASHA Dashboard</h1>
+         <button class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold">Logout</button>
+       </header>
+
+       <!-- DASHBOARD STATS -->
+       <main class="flex-1 p-6">
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+           <div class="bg-white p-6 rounded-xl shadow">
+             <h2 class="text-sm text-[#4c9a66]">Assigned Patients</h2>
+             <p class="text-2xl font-bold text-[#0d1b12]">58</p>
+           </div>
+           <div class="bg-white p-6 rounded-xl shadow">
+             <h2 class="text-sm text-[#4c9a66]">Appointments This Week</h2>
+             <p class="text-2xl font-bold text-[#0d1b12]">12</p>
+           </div>
+           <div class="bg-white p-6 rounded-xl shadow">
+             <h2 class="text-sm text-[#4c9a66]">Follow-Ups Pending</h2>
+             <p class="text-2xl font-bold text-[#0d1b12]">7</p>
+           </div>
+         </div>
+
+         <!-- PATIENT LIST -->
+         <div class="bg-white p-6 rounded-xl shadow mb-6">
+           <h2 class="text-lg font-bold text-[#0d1b12] mb-4">My Patients</h2>
+           <table class="w-full border-collapse">
+             <thead>
+               <tr class="border-b text-[#4c9a66]">
+                 <th class="py-2 px-3">Name</th>
+                 <th class="py-2 px-3">Age</th>
+                 <th class="py-2 px-3">Condition</th>
+                 <th class="py-2 px-3">Last Visit</th>
+                 <th class="py-2 px-3">Actions</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Ravi Kumar</td>
+                 <td class="py-2 px-3">45</td>
+                 <td class="py-2 px-3">Diabetes</td>
+                 <td class="py-2 px-3">2025-09-10</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#13ec5b] text-[#0d1b12] rounded-lg">Update</button>
+                 </td>
+               </tr>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Anita Desai</td>
+                 <td class="py-2 px-3">30</td>
+                 <td class="py-2 px-3">Maternal Health</td>
+                 <td class="py-2 px-3">2025-09-12</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#13ec5b] text-[#0d1b12] rounded-lg">Update</button>
+                 </td>
+               </tr>
+               <tr>
+                 <td class="py-2 px-3">Suresh Patel</td>
+                 <td class="py-2 px-3">52</td>
+                 <td class="py-2 px-3">Hypertension</td>
+                 <td class="py-2 px-3">2025-09-08</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#13ec5b] text-[#0d1b12] rounded-lg">Update</button>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+
+         <!-- TASK LIST -->
+         <div class="bg-white p-6 rounded-xl shadow">
+           <h2 class="text-lg font-bold text-[#0d1b12] mb-4">Tasks</h2>
+           <ul class="space-y-3">
+             <li class="flex justify-between items-center">
+               <span class="text-[#0d1b12]">Conduct follow-up for Ravi Kumar</span>
+               <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Mark Done</button>
+             </li>
+             <li class="flex justify-between items-center">
+               <span class="text-[#0d1b12]">Check maternal health report for Anita</span>
+               <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Mark Done</button>
+             </li>
+             <li class="flex justify-between items-center">
+               <span class="text-[#0d1b12]">Submit weekly community report</span>
+               <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Mark Done</button>
+             </li>
+           </ul>
+         </div>
+       </main>
+
+       <!-- FOOTER -->
+       <footer class="bg-[#0d1b12] text-white text-center py-4">
+         <p>@2024 HealthConnect. All rights reserved.</p>
+       </footer>
+     </div>
+   </div>
+ </body>
+</html>

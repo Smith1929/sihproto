@@ -1,0 +1,114 @@
+<html> 
+ <head> 
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" /> 
+   <link 
+     rel="stylesheet" 
+     as="style" 
+     onload="this.rel='stylesheet'" 
+     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" 
+   /> 
+   <title>Landing page</title> 
+   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> 
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> 
+ </head> 
+ <body> 
+   <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f8fcf9] group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'> 
+     <div class="layout-container flex h-full grow flex-col"> 
+
+       <!-- HEADER --> 
+       <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3eb] px-10 py-3"> 
+         <div class="flex items-center gap-4 text-[#0d1b12]"> 
+           <div class="size-4"> 
+             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262Z" fill="currentColor"></path> 
+             </svg> 
+           </div> 
+           <h2 class="text-[#0d1b12] text-lg font-bold leading-tight tracking-[-0.015em]">Tele-Medy</h2> 
+         </div> 
+         <div class="flex flex-1 justify-end gap-8"> 
+           <div class="flex items-center gap-9"> 
+             <a class="text-[#0d1b12] text-sm font-medium leading-normal" href="#">Home</a> 
+             <a class="text-[#0d1b12] text-sm font-medium leading-normal" href="#">About</a> 
+             <a class="text-[#0d1b12] text-sm font-medium leading-normal" href="#">Features</a> 
+             <a class="text-[#0d1b12] text-sm font-medium leading-normal" href="#">Contact</a> 
+           </div> 
+           <div class="flex gap-2"> 
+             <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#13ec5b] text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em]"> 
+               <span class="truncate">Get Started</span> 
+             </button> 
+           </div> 
+         </div> 
+       </header> 
+
+       <!-- HERO SECTION --> 
+       <div class="px-40 flex flex-1 justify-center py-5"> 
+         <div class="layout-content-container flex flex-col max-w-[960px] flex-1"> 
+           <div class="@container"> 
+             <div class="flex flex-col gap-6 px-4 py-10 @[480px]:gap-8 @[864px]:flex-row"> 
+               <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl @[480px]:h-auto @[480px]:min-w-[400px] @[864px]:w-full" 
+                 style='background-image:url("https://lh3.googleusercontent.com/aida-public/...")'> 
+               </div> 
+               <div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center"> 
+                 <div class="flex flex-col gap-2 text-left"> 
+                   <h1 class="text-[#0d1b12] text-4xl font-black leading-tight">Bringing Healthcare to Every Village</h1> 
+                   <h2 class="text-[#0d1b12] text-sm font-normal leading-normal">Connect with healthcare professionals anytime, anywhere. Our platform ensures quality care is accessible to all, bridging the gap between urban and rural communities.</h2> 
+                 </div> 
+                <a href="login.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-xl h-12 px-5 bg-[#13ec5b] text-[#0d1b12] text-base font-bold">Get Started</a>
+                
+               </div> 
+             </div> 
+           </div> 
+
+           <!-- SIGNUP BUTTONS --> 
+           <div class="flex justify-stretch"> 
+             <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start"> 
+               <button class="flex h-10 px-4 rounded-xl bg-[#13ec5b] text-[#0d1b12] font-bold">Sign Up as Doctor</button> 
+               <button class="flex h-10 px-4 rounded-xl bg-[#e7f3eb] text-[#0d1b12] font-bold">Sign Up as ASHA</button> 
+             </div> 
+           </div> 
+           <div class="flex px-4 py-3 justify-start"> 
+             <button class="flex h-10 px-4 rounded-xl bg-[#e7f3eb] text-[#0d1b12] font-bold">Sign Up as Admin</button> 
+           </div> 
+
+           <!-- FEATURES SECTION --> 
+           <h2 class="text-[#0d1b12] text-[22px] font-bold px-4 pb-3 pt-5">Features</h2> 
+           <div class="flex flex-col gap-10 px-4 py-10"> 
+             <div class="flex flex-col gap-4"> 
+               <h1 class="text-[#0d1b12] text-[32px] font-bold">Empowering Healthcare Providers and Communities</h1> 
+               <p class="text-[#0d1b12] text-base">Our platform offers tailored benefits for doctors, ASHAs, and administrators, ensuring seamless healthcare delivery and management.</p> 
+             </div> 
+             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3"> 
+               <div class="flex flex-col gap-1 rounded-lg border p-4 bg-[#f8fcf9]"> 
+                 <h2 class="text-[#0d1b12] font-bold">For Doctors</h2> 
+                 <p class="text-[#4c9a66]">Expand your reach and manage patient interactions efficiently.</p> 
+               </div> 
+               <div class="flex flex-col gap-1 rounded-lg border p-4 bg-[#f8fcf9]"> 
+                 <h2 class="text-[#0d1b12] font-bold">For ASHAs</h2> 
+                 <p class="text-[#4c9a66]">Enhance community health services with streamlined communication and patient tracking.</p> 
+               </div> 
+               <div class="flex flex-col gap-1 rounded-lg border p-4 bg-[#f8fcf9]"> 
+                 <h2 class="text-[#0d1b12] font-bold">For Admins</h2> 
+                 <p class="text-[#4c9a66]">Oversee operations, manage resources, and ensure quality healthcare delivery.</p> 
+               </div> 
+             </div> 
+           </div> 
+
+           
+
+       <!-- FOOTER --> 
+       <footer class="flex justify-center"> 
+         <div class="flex max-w-[960px] flex-1 flex-col"> 
+           <footer class="flex flex-col gap-6 px-5 py-10 text-center"> 
+             <div class="flex flex-wrap items-center justify-center gap-6"> 
+               <a class="text-[#4c9a66]" href="#">Privacy Policy</a> 
+               <a class="text-[#4c9a66]" href="#">Terms of Service</a> 
+             </div> 
+             <p class="text-[#4c9a66]">@2024 HealthConnect. All rights reserved.</p> 
+           </footer> 
+         </div> 
+       </footer> 
+
+     </div> 
+   </div> 
+ </body> 
+</html>

@@ -1,0 +1,106 @@
+<html>
+ <head>
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+   <link
+     rel="stylesheet"
+     as="style"
+     onload="this.rel='stylesheet'"
+     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+   />
+   <title>Admin Dashboard</title>
+   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+ </head>
+ <body>
+   <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f8fcf9] group/design-root overflow-x-hidden"
+     style='font-family: Inter, "Noto Sans", sans-serif;'>
+     <div class="layout-container flex h-full grow flex-col">
+
+       <!-- HEADER -->
+       <header class="flex items-center justify-between px-6 py-4 bg-[#0d1b12] text-white">
+         <h1 class="text-xl font-bold">Admin Dashboard</h1>
+         <a href="login.html" class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold inline-block text-center">Logout</a>
+       </header>
+
+       <!-- DASHBOARD STATS -->
+       <main class="flex-1 p-6">
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+           <div class="bg-white p-6 rounded-xl shadow">
+             <a href="admin_data.html" class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold inline-block text-center">Data</a>
+           </div>
+           <div class="bg-white p-6 rounded-xl shadow">
+             <a href="#" class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold inline-block text-center">Schedule Appointment</a>
+           </div>
+           <div class="bg-white p-6 rounded-xl shadow">
+             <a href="analytics.html" class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold inline-block text-center">Analytics</a>
+           </div>
+         </div>
+
+         <!-- USER MANAGEMENT -->
+         <div class="bg-white p-6 rounded-xl shadow mb-6">
+           <h2 class="text-lg font-bold text-[#0d1b12] mb-4">Manage Users</h2>
+           <table class="w-full border-collapse">
+             <thead>
+               <tr class="border-b text-[#4c9a66]">
+                 <th class="py-2 px-3">Name</th>
+                 <th class="py-2 px-3">Role</th>
+                 <th class="py-2 px-3">Email</th>
+                 <th class="py-2 px-3">Actions</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Dr. Anya Sharma</td>
+                 <td class="py-2 px-3">Doctor</td>
+                 <td class="py-2 px-3">anya.sharma@example.com</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Edit</button>
+                   <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Remove</button>
+                 </td>
+               </tr>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Meena Devi</td>
+                 <td class="py-2 px-3">ASHA</td>
+                 <td class="py-2 px-3">meena.devi@example.com</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Edit</button>
+                   <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Remove</button>
+                 </td>
+               </tr>
+               <tr>
+                 <td class="py-2 px-3">Ravi Kumar</td>
+                 <td class="py-2 px-3">Patient</td>
+                 <td class="py-2 px-3">ravi.kumar@example.com</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#e7f3eb] text-[#0d1b12] rounded-lg">Edit</button>
+                   <button class="px-3 py-1 bg-red-500 text-white rounded-lg">Remove</button>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+
+         <!-- SYSTEM SETTINGS -->
+         <div class="bg-white p-6 rounded-xl shadow">
+           <h2 class="text-lg font-bold text-[#0d1b12] mb-4">System Settings</h2>
+           <div class="space-y-4">
+             <div class="flex items-center justify-between">
+               <span class="text-[#0d1b12]">Enable Maintenance Mode</span>
+               <input type="checkbox" class="w-5 h-5 accent-[#13ec5b]" />
+             </div>
+             <div class="flex items-center justify-between">
+               <span class="text-[#0d1b12]">Allow New Registrations</span>
+               <input type="checkbox" checked class="w-5 h-5 accent-[#13ec5b]" />
+             </div>
+           </div>
+         </div>
+       </main>
+
+       <!-- FOOTER -->
+       <footer class="bg-[#0d1b12] text-white text-center py-4">
+         <p>@2024 HealthConnect. All rights reserved.</p>
+       </footer>
+     </div>
+   </div>
+ </body>
+</html>

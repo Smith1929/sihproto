@@ -1,0 +1,85 @@
+<html>
+ <head>
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+   <link
+     rel="stylesheet"
+     as="style"
+     onload="this.rel='stylesheet'"
+     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+   />
+   <title>Reports</title>
+   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+ </head>
+ <body>
+   <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f8fcf9] group/design-root overflow-x-hidden"
+     style='font-family: Inter, "Noto Sans", sans-serif;'>
+     <div class="layout-container flex h-full grow flex-col">
+
+       <!-- HEADER -->
+       <header class="flex items-center justify-between px-6 py-4 bg-[#0d1b12] text-white">
+         <h1 class="text-xl font-bold">Reports</h1>
+         <button class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold">Generate Report</button>
+       </header>
+
+       <!-- REPORTS CONTENT -->
+       <main class="flex-1 p-6">
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+           <!-- PATIENT REPORT CARD -->
+           <div class="bg-white p-6 rounded-xl shadow">
+             <h2 class="text-lg font-bold text-[#0d1b12] mb-2">Patient Statistics</h2>
+             <p class="text-[#4c9a66] mb-4">Overview of registered patients and demographics.</p>
+             <ul class="space-y-2">
+               <li class="text-[#0d1b12]">Total Patients: <span class="font-bold">1,245</span></li>
+               <li class="text-[#0d1b12]">Male: <span class="font-bold">720</span></li>
+               <li class="text-[#0d1b12]">Female: <span class="font-bold">525</span></li>
+               <li class="text-[#0d1b12]">Average Age: <span class="font-bold">41</span></li>
+             </ul>
+           </div>
+
+           <!-- APPOINTMENTS REPORT CARD -->
+           <div class="bg-white p-6 rounded-xl shadow">
+             <h2 class="text-lg font-bold text-[#0d1b12] mb-2">Appointments Summary</h2>
+             <p class="text-[#4c9a66] mb-4">Breakdown of scheduled appointments.</p>
+             <ul class="space-y-2">
+               <li class="text-[#0d1b12]">Total Appointments: <span class="font-bold">326</span></li>
+               <li class="text-[#0d1b12]">Confirmed: <span class="font-bold text-[#13ec5b]">240</span></li>
+               <li class="text-[#0d1b12]">Pending: <span class="font-bold text-[#4c9a66]">56</span></li>
+               <li class="text-[#0d1b12]">Cancelled: <span class="font-bold text-red-500">30</span></li>
+             </ul>
+           </div>
+
+           <!-- DOCTOR REPORT CARD -->
+           <div class="bg-white p-6 rounded-xl shadow">
+             <h2 class="text-lg font-bold text-[#0d1b12] mb-2">Doctor Activity</h2>
+             <p class="text-[#4c9a66] mb-4">Number of doctors actively providing consultations.</p>
+             <ul class="space-y-2">
+               <li class="text-[#0d1b12]">Total Doctors: <span class="font-bold">75</span></li>
+               <li class="text-[#0d1b12]">Active This Week: <span class="font-bold">62</span></li>
+               <li class="text-[#0d1b12]">Avg. Consultations/Day: <span class="font-bold">48</span></li>
+             </ul>
+           </div>
+
+           <!-- SYSTEM REPORT CARD -->
+           <div class="bg-white p-6 rounded-xl shadow">
+             <h2 class="text-lg font-bold text-[#0d1b12] mb-2">System Reports</h2>
+             <p class="text-[#4c9a66] mb-4">General logs and automated report summaries.</p>
+             <ul class="space-y-2">
+               <li class="text-[#0d1b12]">Weekly Report Generated: <span class="font-bold">Yes</span></li>
+               <li class="text-[#0d1b12]">Last Generated On: <span class="font-bold">2025-09-15</span></li>
+               <li class="text-[#0d1b12]">Error Logs: <span class="font-bold text-red-500">2</span></li>
+             </ul>
+           </div>
+
+         </div>
+       </main>
+
+       <!-- FOOTER -->
+       <footer class="bg-[#0d1b12] text-white text-center py-4">
+         <p>@2024 HealthConnect. All rights reserved.</p>
+       </footer>
+     </div>
+   </div>
+ </body>
+</html>

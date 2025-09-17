@@ -1,0 +1,79 @@
+<html>
+ <head>
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+   <link
+     rel="stylesheet"
+     as="style"
+     onload="this.rel='stylesheet'"
+     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+   />
+   <title>Patients</title>
+   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+ </head>
+ <body>
+   <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f8fcf9] group/design-root overflow-x-hidden"
+     style='font-family: Inter, "Noto Sans", sans-serif;'>
+     <div class="layout-container flex h-full grow flex-col">
+       
+       <!-- HEADER -->
+       <header class="flex items-center justify-between px-6 py-4 bg-[#0d1b12] text-white">
+         <h1 class="text-xl font-bold">Patients</h1>
+         <button class="bg-[#13ec5b] text-[#0d1b12] px-4 py-2 rounded-xl font-bold">Add Patient</button>
+       </header>
+
+       <!-- PATIENTS TABLE -->
+       <main class="flex-1 p-6">
+         <div class="bg-white rounded-xl shadow p-6">
+           <h2 class="text-lg font-bold text-[#0d1b12] mb-4">Patient Records</h2>
+           <table class="w-full border-collapse">
+             <thead>
+               <tr class="border-b text-[#4c9a66]">
+                 <th class="py-2 px-3">Name</th>
+                 <th class="py-2 px-3">Age</th>
+                 <th class="py-2 px-3">Gender</th>
+                 <th class="py-2 px-3">Contact</th>
+                 <th class="py-2 px-3">Actions</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Ravi Kumar</td>
+                 <td class="py-2 px-3">45</td>
+                 <td class="py-2 px-3">Male</td>
+                 <td class="py-2 px-3">+91 9876543210</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#13ec5b] text-[#0d1b12] rounded-lg">View</button>
+                 </td>
+               </tr>
+               <tr class="border-b">
+                 <td class="py-2 px-3">Anita Desai</td>
+                 <td class="py-2 px-3">30</td>
+                 <td class="py-2 px-3">Female</td>
+                 <td class="py-2 px-3">+91 9123456780</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#13ec5b] text-[#0d1b12] rounded-lg">View</button>
+                 </td>
+               </tr>
+               <tr>
+                 <td class="py-2 px-3">Suresh Patel</td>
+                 <td class="py-2 px-3">52</td>
+                 <td class="py-2 px-3">Male</td>
+                 <td class="py-2 px-3">+91 9988776655</td>
+                 <td class="py-2 px-3">
+                   <button class="px-3 py-1 bg-[#13ec5b] text-[#0d1b12] rounded-lg">View</button>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </main>
+
+       <!-- FOOTER -->
+       <footer class="bg-[#0d1b12] text-white text-center py-4">
+         <p>@2024 HealthConnect. All rights reserved.</p>
+       </footer>
+     </div>
+   </div>
+ </body>
+</html>
