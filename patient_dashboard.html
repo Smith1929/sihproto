@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Dashboard - Telemedicine Nabha</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        const onCallStart=()=>{
+            document.getElementById("mfs").style.display = "block";
+        }
+    </script>
     <style>
         /* General Styles */
         body {
@@ -237,6 +242,22 @@
             background-color: #0288d1;
         }
 
+        .mf{
+            display: flex;
+            justify-content: center;
+        }
+
+        .mf button{
+            padding: 10px;
+            margin: 0px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #mfs{
+            display: none;
+        }
+
         /* Media Queries for Responsiveness */
         @media (max-width: 900px) {
             body {
@@ -329,15 +350,19 @@
             <div class="card actions-card">
                 <h2 class="card-title">Actions</h2>
                 <div class="action-buttons">
-                    <button class="action-btn start-call-btn">
-                        <span>Start Video Call</span>
-                    </button>
+                    <button class="action-btn start-call-btn" onclick="onCallStart()">Start Call</button>
                     <button class="action-btn end-call-btn">
                         <span>SOS</span>
                     </button>
                     <button class="action-btn buy-medicine-btn">
                         <span>Buy Medicine</span>
                     </button>
+                </div>
+            </div>
+            <div id="mfs">
+                <div class="mf">
+                    <Button class="action-btn start-call-btn">Male Doctor</Button>
+                    <Button class="action-btn start-call-btn">Female Doctor</Button>
                 </div>
             </div>
 
